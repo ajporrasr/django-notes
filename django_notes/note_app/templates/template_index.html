@@ -1,0 +1,17 @@
+{% extends 'template_base.html' %}
+
+{% block title %}
+    Bienvenid@
+{% endblock %}
+
+{% block content %}
+    <h1 class="title">Bienvenid@ a tu AGENDA Personal</h1>
+
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-success">
+                {{message}}
+            </div>
+        {% endfor %}
+    {% endif %}
+{% endblock %} 

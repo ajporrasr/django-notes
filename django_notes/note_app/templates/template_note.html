@@ -1,0 +1,83 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+
+    <head>
+        <meta charset="utf-8" />
+        <title>
+            {% block title %}
+                AGENDA   
+            {% endblock %}
+            | Leer Nota
+        </title>
+
+        <!--Cabecera de la pagina-->
+        <div id="logotipo_notes">
+            <!-- <img src="{% static 'images/logo.jpg' %}" /> -->
+            <h1>{{note.title}}</h1>
+            <hr/>
+            <br/>                           
+        </div>
+
+        <ul id="lista1" class="enlaces_agenda">
+            {% if user.email %}
+                <li>
+                    <a href="{% url 'agenda' %}">AGENDA</a>
+                </li>
+                <li>
+                    <a href="{% url 'logout' %}">LOG OUT</a>
+                </li>
+            {% else %}
+                <li>
+                    <a href="{% url 'login' %}">LOG IN</a>
+                </li>
+                <li>
+                    <a href="{% url 'signup' %}">SIGN UP</a>
+                </li>
+            {% endif %}            
+        </ul>
+      
+        <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}" />
+    </head>
+        
+    <body>
+        <!--Contenido de la pagina-->
+                   
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-success">
+                    {{message}}
+                </div>
+            {% endfor %}
+        {% endif %}
+
+        {% if user.email %}
+            
+            <div class="box_leer_nota">
+                <div id="actualizado">
+                    <h5>Última actualización: {{note.updated_at}}</h5>
+                </div>    
+                
+                <div class="full_note">
+                    <p>{{ note.content }}</p>
+                </div>    
+
+                <div class="lista2">
+                    <a href="{% url 'edit-note' id=note.id %}">Editar</a>
+                    <a href="{% url 'delete-note' id=note.id %}">Eliminar</a>
+                </div>
+            </div>    
+        
+        {% else %}
+            <h2>Debes identificarte para acceder a tu Agenda</h2>
+        {% endif %}  
+         
+        <!--footer de la pagina-->
+        <footer>
+            Agenda Personal &copy; Alex J. Porras Romero 
+        </footer>
+
+    </body>
+
+</html>  

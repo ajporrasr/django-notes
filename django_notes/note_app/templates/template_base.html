@@ -1,0 +1,70 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+
+    <head>
+        <meta charset="utf-8" />
+        <title>
+            {% block title %}
+                <!--Titulo de cada pagina-->
+            {% endblock %}
+            | Agenda Personal
+        </title>
+
+        <!--Cabecera de la pagina-->
+        <header>
+            <div id="logotipo">
+                <!-- <img src="{% static 'images/logo.jpg' %}" /> -->
+                <h1>Agenda Virtual Personalizada</h1>                
+            </div>
+        </header>
+
+        <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}" />
+    </head>
+    
+    <nav>
+        <ul name="menu">
+            <li>
+                <a href="{% url 'index' %}">Inicio</a>
+            </li>
+            
+            {% if user.email %}
+                <li>
+                    <a href="{% url 'create-note' %}">Crear Nota</a>
+                </li>
+                <li>
+                    <a href="{% url 'agenda' %}">Agenda</a>
+                </li>
+                <li>
+                    <a href="{% url 'logout' %}">Log Out</a>
+                </li>
+            {% else %}
+                <li>
+                    <a href="{% url 'login' %}">Log In</a>
+                </li>
+                <li>
+                    <a href="{% url 'signup' %}">Sign Up</a>
+                </li>
+            {% endif %}            
+        </ul>
+    </nav>
+    
+    <body>
+        <!--Contenido de la pagina-->
+        <div id="content">
+            <div class="box">
+                {% block content %}
+                <!--Codigo que viene de templates-->
+                {% endblock %}
+            </div>
+        </div>
+        
+        <!--footer de la pagina-->
+        <footer>
+            Agenda Personal &copy; Alex J. Porras Romero 
+        </footer>
+
+    </body>
+
+</html>

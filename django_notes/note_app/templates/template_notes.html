@@ -1,0 +1,14 @@
+{% extends 'template_agenda.html' %}
+
+{% block notas %}
+    <h3 class="title">Listado de NOTAS</h3>
+    <ul>
+        {% for note in notes %}
+            <li>
+                {{note.id}}. {{note.title}} ({{note.status}}) - {{note.updated_at}}
+                <a href="{% url 'note' id=note.id %}">Leer nota</a>
+                <a href="{% url 'delete-note' id=note.id %}">Eliminar</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %} 

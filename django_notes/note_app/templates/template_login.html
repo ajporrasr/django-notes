@@ -1,0 +1,55 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+
+    <head>
+        <meta charset="utf-8" />
+        <title>
+            {% block title %}
+                Log In
+            {% endblock %}
+            | Agenda Personal
+        </title>
+
+        <!--Cabecera de la pagina-->
+        
+        <div id="logotipo_agenda">
+            <!-- <img src="{% static 'images/logo.jpg' %}" /> -->
+            <h1>AGENDA</h1>                
+        </div>
+        
+        <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}" />
+    </head>
+    
+    <body>
+        <div class="box_login">
+            {{register_form.errors}}
+
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="alert alert-warning">
+                        {{message}}
+                    </div>
+                {% endfor %}
+            {% endif %}
+
+            <form method="post" action="" class="inside_login">
+                {% csrf_token %}
+                <label for="username">Username</label>
+                <input type="text" name="username" />
+                <label for="email" style="marging-top: 5px;">Email</label>
+                <input type="email" name="email" />
+                <label for="password" style="marging-top: 5px;">Contraseña</label>
+                <input type="password" name="password" />
+
+                <input type="submit" value="Log In" class="boton_login"/>
+            </form>
+            
+            <p class="footer_login">
+                ¿No estás registrado aún? <a href="{% url 'signup' %}">Sign Up</a>
+            </p>
+            
+        </div>
+    </body>
+</html>

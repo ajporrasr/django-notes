@@ -1,0 +1,365 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-decoration: none;
+    list-style: none;    
+}
+
+body{
+    padding-left: 33px;  
+    padding-right: 33px;
+    background-color: #dae4e6; 
+}
+
+header{
+    width: 1200px;
+    height: 70px;
+    background-color: #1B1E1F;
+    border: 1px solid #333333;
+    margin-bottom: 20px;
+    margin: 10px auto;
+}
+
+#logotipo{
+    width: 50%;
+    height: 130px;
+    margin: 0 auto;
+    padding-top: 3px;
+}
+
+#logotipo img{
+    display: block;
+    width: 80px;
+    float: left;
+    margin-top: 20px;
+}
+
+#logotipo h1{
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    letter-spacing: 2px;
+    font-weight: normal;
+    color: #1a73e8;
+}
+
+#logotipo_agenda{
+    display: block;
+    text-align: center;
+    margin-top: 150px;
+    letter-spacing: 2px;
+    font-weight: normal;
+    color: #1a73e8;
+}
+
+#logotipo_notes{
+    display: block;
+    text-align: left;
+    margin-top: 20px;
+    letter-spacing: 2px;
+    font-weight: normal;
+    color: #1a73e8;
+    list-style: none;
+}
+
+.enlaces_agenda{
+    display: block;
+    font-size: 12px;
+    margin-bottom: 20px;
+    float: right;
+    color: #1a73e8;
+    padding-right: 50px;    
+}
+
+#lista1 li {
+    display:inline;
+    padding-left:20px;        
+}
+
+.lista2{ 
+    text-align: right;
+    padding-left: 20px;
+    font-size: 12px;
+    padding-right: 10px;          
+}
+
+#actualizado{
+    float: right;
+    padding-right: 10px;
+    font-size: 11px;
+    padding-top: 5px;
+    padding-bottom: 10px;    
+}
+
+.titulo_nota{
+    padding-top: 33px;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 12px;
+    padding-bottom: 10px;
+}
+
+.rellenado{
+    min-height: 70px;
+    max-height: 70px;
+    font-size: 12px;
+    text-align: justify;    
+    padding-right: 10px;
+    padding-bottom: 10px;
+    white-space: nowrap;
+    /* overflow-wrap: break-word; */    
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-left: 10px; 
+    max-width: 550px;
+}
+
+nav{
+    width: 1200px;
+    height: 40px;
+    margin: 0 auto;
+    background-color: #1B1E1F;
+    border: 1px solid #333333;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+nav ul{
+    list-style: none;
+    text-decoration: none;
+}
+
+nav ul li{
+    line-height: 40px;
+    float: left;
+}
+
+nav ul li a{
+    display: block;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: #1a73e8;
+}
+
+nav ul li a:hover{
+    background: #1a73e8;
+    color: white;
+    transition: all 300ms;
+}
+
+/* Estilos contenido central */
+
+#content{
+    width: 1200px;
+    min-height: 710px;
+    margin: 0 auto;
+    margin-top: 33px;
+    margin-bottom: 21px;
+}
+
+.box{
+    background: white;
+    width: 1160px;
+    min-height: 710px;
+    margin: 0 auto;
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+.box_login{
+    background: white;
+    width: 350px;
+    padding: 40px;
+    margin: 0 auto;
+    border: 1px solid #ddd;
+    border-radius: 5px;    
+}
+
+.inside_login{
+    margin: 0 auto;
+    width: min-content;
+}
+
+.box_signup{
+    background: white;
+    width: 350px;
+    padding: 40px;
+    margin: 0 auto;
+    border: 1px solid #ddd;
+    border-radius: 5px;       
+}
+
+.inside_signup{
+    margin: 0 auto;
+    width: min-content;
+}
+
+.box_nota{
+    background: white;
+    min-width: 250px;
+    max-width: 250px;
+    min-height: 150px;
+    max-height: 150px;
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;          
+}
+
+.box_create{
+    vertical-align: middle;       
+}
+
+.inside_nota{
+    margin: 0 auto;
+    width: min-content;
+}
+
+.box_leer_nota{
+    background: #dae4e6;
+    min-width: 500px;
+    max-width: 500px;
+    min-height: 400px;
+    max-height: 400px;
+    padding: 10px;
+    margin: 5px;       
+}
+
+.full_note{
+    padding-top: 10px;
+    margin: 20px;
+    text-align: justify;
+    font-family: 'cursive' !important;
+    font-size: 14px;
+}
+
+form label{
+    display: block;
+    padding: 10px;
+    padding-left: 5px;
+}
+
+.message,
+.alert-success{
+    padding: 20px;
+    color: green;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.message,
+.alert-warning,
+.rojo{
+    padding: 10px;
+    color: red;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+form label{
+    padding-left: 0px;
+    font-size: 12px;
+    color: #202020;
+}
+
+form input{
+    display: block;
+    min-width: 210px;
+    min-height: 27px;
+    padding-left: 10px;
+    font-size: 14px;             
+}
+
+form textarea{
+    width: 500px;
+    height: 210px;
+    padding-left: 10px;
+    margin-bottom: 5px;
+    padding-top: 10px;   
+}
+
+form select{
+    min-width: 70px;    
+}    
+
+footer{
+    text-align: right;
+    color: black;
+    padding-right: 50px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    font-size: 12px;
+    position:absolute;
+    bottom:5px;
+    right:10px;
+}
+
+.footer_login{
+    margin-top: 10px;
+    font-size: 12px;
+    text-align: center;
+    margin-right: 10px;
+}
+
+.footer_login a{
+    color: #1a73e8;
+}
+
+.title{
+    text-align: center;
+    color: #444;
+    font-size: 24px;
+    margin-bottom: 7px;
+    padding-top: 10px;
+}
+
+.boton{
+    background: #1a73e8;
+    width: 230px;
+    height: 27px;
+    font-size: 14px;
+    color: white;
+    border: none;
+    margin-left: 0 auto;
+    border-radius: 5px;
+    cursor: pointer;   
+}
+
+.boton:hover{
+    font-size: 14px;
+    color: black;    
+}
+
+.boton_login{
+    background: #1a73e8;
+    width: 230px;
+    height: 27px;
+    font-size: 14px;
+    color: white;
+    border: none;
+    margin-top: 20px;
+    margin-left: 0 auto;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.boton_login:hover{
+    cursor: pointer;
+}
+
+.boton_signup{
+    background: #1a73e8;
+    width: 230px;
+    height: 27px;
+    font-size: 14px;
+    color: white;
+    border: none;
+    margin-top: 20px;
+    margin-left: 0 auto;
+    border-radius: 5px;
+}
+
+.boton_signup:hover{
+    cursor: pointer;
+}
